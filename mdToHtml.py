@@ -51,7 +51,7 @@ def md_to_html(src_md: Path) -> Path:
     md_text = src_md.read_text(encoding="utf-8")
 
     # 1. markdown-it 解析，插件配置比照 md-reader
-    md = (MarkdownIt("commonmark", {"html": True, "linkify": True, "typographer": True})
+    md = (MarkdownIt("gfm-like", {"html": True, "linkify": True, "typographer": True})
             .use(footnote_plugin)
             .use(deflist_plugin)
             .use(tasklists_plugin, {"enabled": True})
